@@ -1,0 +1,18 @@
+<div class="container mx-auto py-8">
+    <h1 class="text-3xl font-semibold mb-4">Nuestros Expedientes</h1>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Producto (repetir según la lista de productos) -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden" *ngFor="let producto of products">
+        <img [src]="producto.FOTO" [alt]="producto.NOMBRE" class="w-full h-60 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold mb-2">{{ producto.NOMBRE }}</h3>
+          <p class="text-gray-600">{{ producto.DESCRIPCION }}</p>
+          <p class="text-gray-600">Precio: Q{{ producto.PRECIO }}</p>
+          <button (click)="createCarrito(producto.ID,producto.PRECIO)" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 mt-4">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

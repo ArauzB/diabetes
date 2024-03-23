@@ -1,0 +1,107 @@
+<!-- perfil-usuario.component.html -->
+
+<div class="container mx-auto py-8">
+  <h1 class="text-3xl font-semibold mb-4">Mi Perfil</h1>
+
+  <!-- Información del Usuario -->
+  <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+    <div class="flex items-center space-x-4"  *ngFor="let usuarios of usuario" >
+      <div class="w-20 h-20 rounded-full overflow-hidden">
+        <img [src]="usuarios.FOTO" alt="Foto de Perfil" class="w-full h-full object-cover">
+      </div>
+      <div>
+        <h2 class="text-lg font-semibold">{{usuarios.NOMBRE }}  {{usuarios.APELLIDO}}</h2>
+        <p class="text-gray-600">Correo Electrónico: {{usuarios.CORREO }}</p>
+        <p class="text-gray-600">Dirección: {{usuarios.UBICACION }}</p>
+        <p class="text-gray-600">Teléfono: {{usuarios.TELEFONO }}</p>
+      </div>
+    </div>
+  </div>
+
+
+      <!-- Campos de Edición (nombre, correo, dirección, teléfono, contraseña, etc.) -->
+      <!-- Puedes agregar más campos según sea necesario -->
+      <div class="bg-white rounded-lg shadow-md p-4"  >
+        <h2 class="text-lg font-semibold mb-2">Editar Perfil</h2>
+        <form (ngSubmit)="updateUsuario()" >
+          <div class="mb-4">
+            <label for="nombre" class="block text-gray-600">Nombre</label>
+            <input type="text" id="nombre" name="nombre" [(ngModel)]="user.nombre" class="w-full border rounded-md p-2">
+          </div>
+          <div class="mb-4">
+            <label for="apellido" class="block text-gray-600">Apellido</label>
+            <input type="text" id="apellido" name="apellido" [(ngModel)]="user.apellido" class="w-full border rounded-md p-2">
+          </div>
+          <div class="mb-4">
+            <label for="telefono" class="block text-gray-600">Telefono</label>
+            <input type="text" id="telefono" name="telefono" [(ngModel)]="user.telefono" class="w-full border rounded-md p-2">
+          </div>
+          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">Guardar Informacion</button>
+        </form>
+      </div>
+    
+    
+
+
+
+
+  <!--Formulario para agregar ubicacion-->
+  <div class="bg-white rounded-lg shadow-md p-4" *ngIf="!estado">
+    <h2 class="text-lg font-semibold mb-2">Agregar Ubicación</h2>
+    <form (ngSubmit)="createUbicacion()">
+      <div class="mb-4">
+        <label for="departamento" class="block text-gray-600">Departamento</label>
+        <input type="text" id="departamento" name="departamento" [(ngModel)]="ubicacion.departamento" class="w-full border rounded-md p-2">
+      </div>
+      <div class="mb-4">
+        <label for="municipio" class="block text-gray-600">Municipio</label>
+        <input type="text" id="municipio" name="municipio" [(ngModel)]="ubicacion.municipio" class="w-full border rounded-md p-2">
+      </div>
+      <div class="mb-4">
+        <label for="zona" class="block text-gray-600">Zona</label>
+        <input type="text" id="zona" name="zona" [(ngModel)]="ubicacion.zona" class="w-full border rounded-md p-2">
+      </div>
+      <div class="mb-4">
+        <label for="direccion" class="block text-gray-600">Dirección</label>
+        <input type="text" id="direccion" name="direccion" [(ngModel)]="ubicacion.direccion" class="w-full border rounded-md p-2">
+      </div>
+      <div class="mb-4">
+        <label for="direccion" class="block text-gray-600">Detalles</label>
+        <input type="text" id="direccion" name="direccion" [(ngModel)]="ubicacion.ubicacion" class="w-full border rounded-md p-2">
+      </div>
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">Guardar Ubicación</button>
+    </form>
+  </div>
+
+
+  <div class="bg-white rounded-lg shadow-md p-4" *ngIf="estado"  >
+    <h2 class="text-lg font-semibold mb-2">Editar Ubicación</h2>
+    <form (ngSubmit)="updateUbicacion()" >
+      <div class="mb-4">
+        <label for="departamento" class="block text-gray-600">Departamento</label>
+        <input type="text" id="departamento" name="departamento" [(ngModel)]="ubicacion.departamento" class="w-full border rounded-md p-2">
+      </div>
+      <div class="mb-4">
+        <label for="municipio" class="block text-gray-600">Municipio</label>
+        <input type="text" id="municipio" name="municipio" [(ngModel)]="ubicacion.municipio" class="w-full border rounded-md p-2">
+      </div>
+      <div class="mb-4">
+        <label for="zona" class="block text-gray-600">Zona</label>
+        <input type="text" id="zona" name="zona" [(ngModel)]="ubicacion.zona" class="w-full border rounded-md p-2">
+      </div>
+      <div class="mb-4">
+        <label for="direccion" class="block text-gray-600">Dirección</label>
+        <input type="text" id="direccion" name="direccion" [(ngModel)]="ubicacion.direccion" class="w-full border rounded-md p-2">
+      </div>
+      <div class="mb-4">
+        <label for="detalle" class="block text-gray-600">Detalles</label>
+        <input type="text" id="detalle" name="detalle" [(ngModel)]="ubicacion.ubicacion" class="w-full border rounded-md p-2">
+      </div>
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">Guardar Ubicación</button>
+    </form>
+  </div>
+
+  <input type="file" (change)="onFileSelected($event)" accept="image/*">
+
+
+</div>

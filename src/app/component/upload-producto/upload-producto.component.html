@@ -1,0 +1,28 @@
+
+<div class="bg-white rounded-lg shadow-md p-4"   >
+    <h2 class="text-lg font-semibold mb-2">Agregar Categoria</h2>
+    <form (ngSubmit)="createProducto()" >
+      <div class="mb-4">
+        <label for="nombre" class="block text-gray-600">Nombre</label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="producto.nombre" class="w-full border rounded-md p-2">
+        </div>
+        <div class="mb-4">
+            <label for="descripcion" class="block text-gray-600">Descripción</label>
+            <input type="text" id="descripcion" name="descripcion" [(ngModel)]="producto.descripcion" class="w-full border rounded-md p-2">
+        </div>
+        <div class="mb-4">
+            <label for="precio" class="block text-gray-600">Precio</label>
+            <input type="text" id="precio" name="precio" [(ngModel)]="producto.precio" class="w-full border rounded-md p-2">
+        </div>
+        <div class="mb-4">
+            <label for="cantidad" class="block text-gray-600">Cantidad</label>
+            <input type="text" id="cantidad" name="cantidad" [(ngModel)]="producto.cantidad" class="w-full border rounded-md p-2">
+        </div>
+        <div class="mb-4">
+            <label for="categoria" class="block text-gray-600">Categoria</label>
+            <input type="text" id="categoria" name="categoria" [(ngModel)]="producto.id_categoria" class="w-full border rounded-md p-2">
+        </div>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">Guardar Ubicación</button>
+    </form>
+</div>
+        

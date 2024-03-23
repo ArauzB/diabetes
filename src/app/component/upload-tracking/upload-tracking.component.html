@@ -1,0 +1,22 @@
+<!-- seguimiento-pedido.component.html -->
+
+<div class="container mx-auto py-8">
+    <h1 class="text-3xl font-semibold mb-4">Seguimiento de Pedido</h1>
+  
+    <!-- Estado del Pedido -->
+    <div class="bg-white rounded-lg shadow-md p-4 mb-4"  >
+      <div class="bg-white rounded-lg shadow-md p-4 mb-4" *ngFor="let orden of ordenes"  >
+      <h2 class="text-lg font-semibold mb-2">Estado del Pedido</h2>
+      <p class="text-gray-600" >Estado: {{orden.ESTADO_PEDIDO}}</p>
+      <p class="text-gray-600">Fecha de entrega estimada: {{orden.HORA}}</p>
+      <p class="text-gray-600">Productos: {{orden.PRODUCTOS}}</p>
+      <p class="text-black-600 font-semibold ">Total: {{orden.TOTAL_DETALLE}}</p>
+
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="actualizarEstadoPedido(orden.ID, orden.ESTADO_PEDIDO)">Actualizar</button>
+      </div>
+    </div>
+  
+  
+      <div id="mapa" class="w-full h-80"></div>
+    </div>
+  

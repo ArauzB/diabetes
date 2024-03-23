@@ -1,0 +1,11 @@
+
+<div class="bg-white rounded-lg shadow-md p-4"   >
+    <h2 class="text-lg font-semibold mb-2">Agregar Categoria</h2>
+    <form  >
+      <div class="mb-4">
+        <label for="nombre" class="block text-gray-600">ID</label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="this.id" class="w-full border rounded-md p-2">
+      </div>
+      <input type="file" (change)="onFileSelected($event)" accept="image/*">
+    </form>
+</div>
