@@ -10,10 +10,10 @@ import { environment } from "src/environments/environment";
 export class CategoriasService {
 
   private readonly BASE_URL = environment.API_URL; // URL de tu backend
-  private readonly GETS_CATEGORIA = `${this.BASE_URL}/categoria/getsCategoria`;
-  private readonly GET_CATEGORIA = `${this.BASE_URL}/categoria/getCategoria`;
-  private readonly CREATE_CATEGORIA = `${this.BASE_URL}/categoria/createCategoria`;
-  private readonly UPDATE_IMAGE = `${this.BASE_URL}/categoria/updateImage`;
+  private readonly GETS_CATEGORIA = `${this.BASE_URL}/expediente/getAllExpedientes`;
+  private readonly GET_CATEGORIA = `${this.BASE_URL}/expediente/getCategoria`;
+  private readonly CREATE_CATEGORIA = `${this.BASE_URL}/expediente/createExpediente`;
+  private readonly UPDATE_IMAGE = `${this.BASE_URL}/expediente/updateImage`;
 
   constructor(private http: HttpClient, private router:Router) {}
 
@@ -40,5 +40,5 @@ export class CategoriasService {
   }
 
 
-  
+
 }

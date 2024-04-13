@@ -8,12 +8,12 @@ import { environment } from "src/environments/environment";
   providedIn: 'root'
 })
 export class ProductosService {
-  
+
   private readonly BASE_URL = environment.API_URL; // URL de tu backend
-  private readonly GET_PRODUCTOS = `${this.BASE_URL}/productos/getsProductos`;
-  private readonly GET_PRODUCTO = `${this.BASE_URL}/productos/getProducto`;
-  private readonly CREATE_PRODUCTO = `${this.BASE_URL}/productos/createProducto`;
-  private readonly UPDATE_IMAGE = `${this.BASE_URL}/productos/updateImage`;
+  private readonly GET_PRODUCTOS = `${this.BASE_URL}/paciente/getCliente`;
+  private readonly GET_PRODUCTO = `${this.BASE_URL}/paciente/getProducto`;
+  private readonly CREATE_PRODUCTO = `${this.BASE_URL}/paciente/crearCliente`;
+  private readonly UPDATE_IMAGE = `${this.BASE_URL}/paciente/updateImage`;
 
   constructor(private http: HttpClient, private router:Router) {}
 

@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'tracking', component: TrackingComponent, canActivate: [AuthGuard]},
   { path: 'pedidos', component: PedidosComponent, canActivate: [AuthGuard] },
   { path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard] },
-  { path: 'productos', component: ProductosComponent, canActivate: [AuthGuard] },
+  { path: 'pacientes', component: ProductosComponent, canActivate: [AuthGuard] },
   { path: 'restaurantes', component: RestaurantesComponent, canActivate: [AuthGuard] },
   { path: 'categorias', component: CategoriasComponent, canActivate: [AuthGuard] },
   { path: 'carrito', component: CarritoComponent, canActivate: [AuthGuard] },
