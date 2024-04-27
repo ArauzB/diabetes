@@ -1,0 +1,29 @@
+<div class="container mx-auto py-8">
+  <h1 class="text-3xl font-semibold mb-6">Crear Expediente</h1>
+
+  <div *ngIf="mensaje" class="text-red-500 mb-4">{{ mensaje }}</div>
+
+  <form (ngSubmit)="crearExpediente()" class="max-w-sm mx-auto">
+    <input type="hidden" [(ngModel)]="id_paciente" name="id_paciente">
+    <input type="hidden" [(ngModel)]="id_usuario" name="id_usuario">
+
+    <div class="mb-4">
+      <label for="id_diabetes" class="block text-sm font-medium text-gray-700 mb-2">ID Diabetes</label>
+      <input id="id_diabetes" type="number" class="form-input w-full" name="id_diabetes" [(ngModel)]="id_diabetes">
+    </div>
+
+    <div class="mb-4">
+      <label for="fecha" class="block text-sm font-medium text-gray-700 mb-2">Fecha</label>
+      <input id="fecha" type="date" class="form-input w-full" name="fecha" [(ngModel)]="fecha">
+    </div>
+
+    <div class="mb-4">
+      <label for="estado" class="block text-sm font-medium text-gray-700 mb-2">Estado</label>
+      <input id="estado" type="number" class="form-input w-full" name="estado" [(ngModel)]="estado">
+    </div>
+
+    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+      Crear Expediente
+    </button>
+  </form>
+</div>

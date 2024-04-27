@@ -1,0 +1,34 @@
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <h1 class="text-3xl font-semibold mb-6">Detalle de Expediente</h1>
+
+  <div *ngIf="mensaje" class="mb-4 text-red-500">{{ mensaje }}</div>
+
+  <div *ngIf="expedientes" class="bg-white rounded-lg shadow-md p-6">
+
+    <div *ngFor="let expediente of expedientes" class="bg-white rounded-lg shadow-md mb-6 p-6">
+      <p><strong>ID Expediente:</strong> {{ expediente.ID_EXPEDIENTE }}</p>
+      <p><strong>Paciente:</strong> {{ expediente.NOMBRES_PACIENTE }} {{ expediente.APELLIDOS_PACIENTE }}</p>
+      <p><strong>Usuario:</strong> {{ expediente.NOMBRES_USUARIO }} {{ expediente.APELLIDOS_USUARIO }}</p>
+      <p><strong>Diabetes:</strong> {{ expediente.NOMBRE_DIABETES }}</p>
+      <p><strong>Fecha:</strong> {{ expediente.FECHA }}</p>
+      <p><strong>Estado:</strong> {{ expediente.ESTADO }}</p>
+      <p><strong>Dirección:</strong> {{ expediente.DIRECCION }}</p>
+
+      <div class="flex flex-col sm:flex-row mt-6 space-y-4 sm:space-y-0 sm:space-x-4">
+        <button (click)="agregarMedicamento(expediente.ID_EXPEDIENTE)"
+                class="w-full sm:w-auto bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition duration-300
+                       focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">Agregar Medicamento</button>
+        <button (click)="verMedicamento(expediente.ID_EXPEDIENTE)"
+                class="w-full sm:w-auto bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition duration-300
+                       focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">Ver Medicamentos</button>
+        <button (click)="agregarcitas(expediente.ID_EXPEDIENTE)"
+                class="w-full sm:w-auto bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition duration-300
+                       focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">Agregar Cita</button>
+        <button (click)="vercitas(expediente.ID_EXPEDIENTE)"
+                class="w-full sm:w-auto bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition duration-300
+                       focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">Ver Citas</button>
+      </div>
+    </div>
+
+  </div>
+</div>

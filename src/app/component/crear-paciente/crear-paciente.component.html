@@ -1,0 +1,35 @@
+<!-- crear-cliente.component.html -->
+
+<div class="max-w-md mx-auto px-4 py-8">
+
+  <h2 class="text-2xl font-bold mb-4">Crear Cliente</h2>
+
+  <div *ngIf="mensaje" class="mb-4 text-red-500">{{ mensaje }}</div>
+
+  <form (ngSubmit)="crearCliente()">
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">CUI:</label>
+      <input type="text" class="form-input w-full" [(ngModel)]="cui" name="cui">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Nombres:</label>
+      <input type="text" class="form-input w-full" [(ngModel)]="nombres" name="nombres">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Apellidos:</label>
+      <input type="text" class="form-input w-full" [(ngModel)]="apellidos" name="apellidos">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Correo Electrónico:</label>
+      <input type="email" class="form-input w-full" [(ngModel)]="email" name="email">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Dirección:</label>
+      <input type="text" class="form-input w-full" [(ngModel)]="direccion" name="direccion">
+    </div>
+    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Crear Cliente
+    </button>
+  </form>
+
+</div>

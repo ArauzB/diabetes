@@ -1,0 +1,11 @@
+<div class="container mx-auto py-8">
+  <h1 class="text-3xl font-semibold mb-4">Crear Nueva Cita</h1>
+
+  <div *ngIf="mensaje" class="mb-4 text-red-500">{{ mensaje }}</div>
+
+  <form (ngSubmit)="crearCita()">
+    <label for="fecha">Fecha:</label>
+    <input type="datetime-local" id="fecha" name="fecha" [(ngModel)]="fechaString">
+    <button type="submit">Crear Cita</button>
+  </form>
+</div>

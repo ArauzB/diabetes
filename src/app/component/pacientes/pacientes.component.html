@@ -1,0 +1,32 @@
+<div class="container mx-auto py-8">
+  <h1 class="text-3xl font-semibold mb-6">Nuestros Pacientes</h1>
+
+  <a routerLink="/crear-paciente"
+     class="btn-action bg-gray-300 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-400 transition duration-300 inline-block mb-4">
+    Agregar Paciente
+  </a>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <ng-container *ngFor="let paciente of pacientes">
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold mb-2">{{ paciente.NOMBRES }} {{ paciente.APELLIDOS }}</h3>
+          <p class="text-gray-600">{{ paciente.DIRECCION }}</p>
+          <p class="text-gray-600">Estado: {{ paciente.ESTADO }}</p>
+
+          <div class="flex flex-col gap-2">
+            <button (click)="agregarExpediente(paciente.ID_PACIENTE)"
+                    class="btn-action bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md transition duration-300">
+              Agregar Expediente
+            </button>
+
+            <button (click)="verExpediente(paciente.ID_PACIENTE)"
+                    class="btn-action bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md transition duration-300">
+              Ver Expedientes
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="p-6">
+  <h2 class="text-2xl font-bold mb-4">Listado de Citas</h2>
+  <div class="overflow-x-auto">
+    <table class="min-w-full bg-white border rounded-lg shadow-md">
+      <thead>
+        <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+          <th class="py-3 px-6 text-left">Fecha</th>
+          <th class="py-3 px-6 text-left">Estado</th>
+          <th class="py-3 px-6 text-left">Paciente</th>
+
+          <th class="py-3 px-6 text-left">Médico</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cita of citas" class="border-b border-gray-200 hover:bg-gray-100">
+          <td class="py-3 px-6 text-left">{{ cita.FECHA | date:'dd/MM/yyyy HH:mm' }}</td>
+          <td class="py-3 px-6 text-left">{{ cita.ESTADO }}</td>
+          <td class="py-3 px-6 text-left">{{ cita.NombrePaciente }} {{ cita.ApellidosPaciente }}</td>
+
+          <td class="py-3 px-6 text-left">{{ cita.NombreUsuario }} {{ cita.ApellidosUsuario }}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

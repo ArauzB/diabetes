@@ -8,18 +8,18 @@ import { environment } from "src/environments/environment";
   providedIn: 'root'
 })
 export class UserService {
-  
+
   private readonly BASE_URL = environment.API_URL; // URL de tu backend
-  private readonly GET_USER = `${this.BASE_URL}/cliente/getCliente`;
+  private readonly GET_USER = `${this.BASE_URL}/auth/users`;
   private readonly UPDATE_USER = `${this.BASE_URL}/cliente/editCliente`;
   private readonly UPDATE_IMAGE = `${this.BASE_URL}/cliente/updateImage`;
-  
+
 
   constructor(private http: HttpClient, private router:Router) {}
 
   // Obtiene el usuario
-  public getUser(token: any): Observable<any> {
-    return this.http.post(this.GET_USER, token );
+  public getUser(id: any): Observable<any> {
+    return this.http.post(this.GET_USER, id );
   }
 
   // Actualiza el usuario
@@ -28,7 +28,7 @@ export class UserService {
   }
 
   // Actualiza la imagen del usuario
-  
+
   subirImagen(token: any, imagen: File): Observable<any> {
     const formData = new FormData();
     formData.append('imagen', imagen);
@@ -36,8 +36,8 @@ export class UserService {
     formData.append('token', token);
 
     return this.http.post(this.UPDATE_IMAGE, formData);
-  
+
   }
-  
+
 
 }

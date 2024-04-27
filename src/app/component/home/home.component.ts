@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductosService } from 'src/app/services/productos.service';
-import { CategoriasService } from 'src/app/services/categorias.service';
-import { RestaurantesService } from 'src/app/services/restaurantes.service';
-import { CarritoService } from 'src/app/services/carrito.service';
+import { PacientesService } from 'src/app/services/pacientes.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,43 +16,18 @@ export class HomeComponent implements OnInit {
   carrito={
     id_producto: '',
     token: localStorage.getItem('token'),
-    precio: 0,	
+    precio: 0,
   }
 
 
-  constructor(private productosService:ProductosService, private router:Router, private categoriasService:CategoriasService,private restaurantesService:RestaurantesService, private carritoService:CarritoService) { }
+  constructor(private productosService:PacientesService, private router:Router) { }
 
   ngOnInit(): void {
 
-   
 
-    this.productosService.getProductos().subscribe(
-      (data) => {
-     
-        this.productos = data.slice(0, 4);
-      },
-      (error) => {
-        console.error('Error al obtener los productos', error);
-      }
-    );
 
-    this.categoriasService.getCategorias().subscribe(
-      (data) => {
-        this.categorias = data.slice(0, 4);
-      },
-      (error) => {
-        console.error('Error al obtener los productos', error);
-      }
-    );
 
-    this.restaurantesService.getRestaurantes().subscribe(
-      (data) => {
-        this.restaurantes = data.slice(0, 4);
-      },
-      (error) => {
-        console.error('Error al obtener los productos', error);
-      }
-    );
+
 
   }
 
@@ -65,18 +37,5 @@ export class HomeComponent implements OnInit {
   }
 
 
-  createCarrito(idProducto: string, precio: number) {
-    this.carrito.id_producto = idProducto; // Asigna el ID del producto al carrito
-    this.carrito.precio = precio; // Asigna el precio del producto al carrito
-    this.carritoService.agregarAlCarrito(this.carrito).subscribe(
-      (data) => {
-        console.log(data);
-        this.router.navigate(['/carrito']);
-      },
-      (error) => {
-        console.error('Error al crear el carrito', error);
-      }
-    );
-  }
 
 }

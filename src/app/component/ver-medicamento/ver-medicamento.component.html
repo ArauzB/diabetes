@@ -1,0 +1,24 @@
+<!-- obtener-expediente.component.html -->
+
+<div class="container mx-auto py-8">
+  <h1 class="text-3xl font-semibold mb-4">Detalle de Expediente</h1>
+
+  <div *ngIf="mensaje" class="mb-4 text-red-500">{{ mensaje }}</div>
+
+  <div *ngIf="medicamento" class="bg-white rounded-lg shadow-md p-4">
+
+    <div class="bg-white rounded-lg shadow-md overflow-hidden" *ngFor="let medicamentos of medicamento">
+      <div class="p-4">
+        <p><strong>ID Expediente:</strong> {{ medicamentos.ID_EXPEDIENTE }}</p>
+    <p><strong>Nombre Medicamento:</strong> {{ medicamentos.NOMBRE_MEDICAMENTO }}</p>
+    <p><strong>Dias de uso:</strong> {{ medicamentos.NO_DIAS }}</p>
+    <p><strong>Cada :</strong> {{ medicamentos.CADA_HORA }} por hora</p>
+    <p><strong>Fecha:</strong> {{ medicamentos.FECHA }}</p>
+    <p><strong>Estado:</strong> {{ medicamentos.ESTADO }}</p>
+    <p><strong>Recomendaciones:</strong> {{ medicamentos.RECOMENDACIONES }}</p>
+    </div>
+    </div>
+
+
+  </div>
+</div>

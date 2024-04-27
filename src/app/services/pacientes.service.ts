@@ -7,7 +7,8 @@ import { environment } from "src/environments/environment";
 @Injectable({
   providedIn: 'root'
 })
-export class ProductosService {
+export class PacientesService {
+
 
   private readonly BASE_URL = environment.API_URL; // URL de tu backend
   private readonly GET_PACIENTES = `${this.BASE_URL}/paciente/getCliente`;
@@ -20,8 +21,8 @@ export class ProductosService {
     return this.http.get<any>(this.GET_PACIENTES);
   }
 
-  createPaciente(producto: any): Observable<any> {
-    return this.http.post<any>(this.CREATE_PACIENTE, producto);
+  createPaciente(paciente: any): Observable<any> {
+    return this.http.post<any>(this.CREATE_PACIENTE, paciente);
   }
 
   updatePaciente(paciente:any): Observable<any>{
